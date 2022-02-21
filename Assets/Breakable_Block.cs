@@ -8,48 +8,51 @@ public class Breakable_Block : MonoBehaviour
     //当たった弾が消滅
     //壁がダメージくらう
     public GameObject Block;
-    public float HP = 20;
+    float HP = 10;
 
-    void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "PlayerBullet")
         {
-            GameObject.Destroy(collider.gameObject);
             HP -= 2;
         }
 
         if (collider.gameObject.tag == "Bullet_player_Charge")
         {
-            GameObject.Destroy(collider.gameObject);
             HP -= 4;
         }
 
         if (collider.gameObject.tag == "Bullet_player_Quick")
         {
-            GameObject.Destroy(collider.gameObject);
             HP -= 0.006f;
         }
     }
 
 
+    private void Start()
+    {
+        effect = GameObject.Find("Effect_BB");
+    }
 
+
+#if true
     //エネミーおよびエネミーの弾ストップ
     //生滅エフェクト生成
     //エネミー消滅
-    public GameObject effect;
-    public bool E = true; //エフェクトを作ったかどうか
+    GameObject effect;
+    bool E = true; //エフェクトを作ったかどうか
     float n = 0;//HPが0になってから消滅するまでのカウント
-    private void Update()
+    private void FixedUpdate()
     {
         if (HP <= 0)
         {
-            n += Time.deltaTime;
+            n += 1;
         }
-        if (n > 1.3)
+        if (n >= 2)
         {
             GameObject.Destroy(Block);
         }
-        if (n > 0.5)
+        if (n >= 1 && n < 2)
         {
             E = false;
         }
@@ -59,4 +62,5 @@ public class Breakable_Block : MonoBehaviour
             E = true;
         }
     }
+#endif
 }

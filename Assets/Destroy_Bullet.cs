@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Destroy_Bullet : MonoBehaviour
 {
+    int n;
+    GameObject effect;
+    bool E = true;
+
+
+    private void Start()
+    {
+        effect = GameObject.Find("Effect_Bullet");
+    }
+
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "EnemyBullet1")

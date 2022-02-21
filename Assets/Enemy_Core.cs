@@ -8,15 +8,32 @@ public class Enemy_Core : MonoBehaviour
 
     public GameObject enemyCore;
     public int HP = 300;
+    bool F1 = true;
+    bool F2 = true;
+    int m;
+
+    public GameObject effectBullet;
+    public GameObject BulletSE;
+    public GameObject EffectBox;
+
+
 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "PlayerBullet")
         {
-            GameObject.Destroy(collider.gameObject);
+            if(F2 == true)
+            {
+                F1 = false;
+
+                GameObject.Destroy(collider.gameObject);
+            }
+            
 
             HP -= 2;
         }
+
+       
     }
 
 
@@ -41,13 +58,41 @@ public class Enemy_Core : MonoBehaviour
 
 
 
-    void Update()
+    void FixedUpdate()
     {
+#if true
+
+        if (F1 == true)
+        {
+            m = 0;
+        }
+
+
+        if (F1 == false)
+        {
+            m++;
+        }
+
+        if (m >= 1)
+        {
+            if (m <= 2)
+            {
+                Instantiate(effectBullet, EffectBox.transform.position, this.transform.rotation);
+
+
+                F1 = true;
+            }
+        }
+#endif
+
+
+
         //エネミー消滅
         //生滅エフェクト生成
         if (HP <= 0)
         {
             n += Time.deltaTime;
+            F2 = false;
         }
         if (n > 20)
         {
@@ -75,7 +120,7 @@ public class Enemy_Core : MonoBehaviour
 
             if (currentTime1 > span1)
             {
-                GameObject runcherBullet = GameObject.Instantiate(EnemyBullet1) as GameObject;
+                GameObject runcherBullet = GameObject.Instantiate(EnemyBullet1) as GameObject;  //asgameobjectって必要なのかあ後で調べる。
                 runcherBullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed; //アタッチしているオブジェクトの前方にbullet speedの速さで発射
                 runcherBullet.transform.position = transform.position;
 

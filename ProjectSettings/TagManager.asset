@@ -12,6 +12,7 @@ TagManager:
   - EnemyBullet1
   - Bullet_player_Charge
   - Bullet_player_Quick
+  - Breakable
   layers:
   - Default
   - TransparentFX

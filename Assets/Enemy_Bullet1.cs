@@ -8,7 +8,7 @@ public class Enemy_Shooting : MonoBehaviour
 
     public float span = 3f;
     private float currentTime = 0f;
-    float bulletSpeed = 8f;
+    float bulletSpeed = 5f;
 
     void Update()
     {

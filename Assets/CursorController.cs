@@ -6,7 +6,7 @@ public class CursorController : MonoBehaviour
 {
     public GameObject camera;
     public GameObject player;
-    Player P;
+    Player_New P;
     Follow_Camera FC;
 
 
@@ -16,7 +16,7 @@ public class CursorController : MonoBehaviour
         Cursor.visible = false; // マウスカーソルを削除する
         Cursor.lockState = CursorLockMode.Locked;  // マウスカーソルを画面内にロックする
 
-        P = player.GetComponent<Player>();
+        P = player.GetComponent<Player_New>();
         FC = camera.GetComponent<Follow_Camera>();
     }
 
