@@ -6,7 +6,6 @@ public class Enemy_Core : MonoBehaviour
 {
     //弾当たって消滅
 
-    public GameObject enemyCore;
     public int HP = 300;
     bool F1 = true;
     bool F2 = true;
@@ -96,7 +95,7 @@ public class Enemy_Core : MonoBehaviour
         }
         if (n > 20)
         {
-            GameObject.Destroy(enemyCore);
+            GameObject.Destroy(gameObject);
         }
         if (n > 0.1f && n < 1f)
         {

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Barrier : MonoBehaviour
 {
     //弾当たって消滅
-    public GameObject barrier;
     public int HP = 300;
 
     void OnTriggerEnter(Collider collider)
@@ -34,7 +33,7 @@ public class Barrier : MonoBehaviour
         }
         if (n > 5)
         {
-            GameObject.Destroy(barrier);
+            GameObject.Destroy(gameObject);
         }
         if (n > 0.1 && n < 0.5)
         {

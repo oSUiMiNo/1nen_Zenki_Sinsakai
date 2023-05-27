@@ -18,7 +18,8 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         AP = enemy.GetComponent<ApproachTarget>(); //Eneの中にあるApproactTargetを取得して変数に格納する
         ES = enemy.GetComponent<Enemy_Shoot>();
-        effect = GameObject.Find("Effect_E");
+        effect = GameObject.Find("Effect_Enemy");
+        
         Tr = this.GetComponent<Transform>();
         FakeenemyBody = GameObject.Find("EneBody");
     }
@@ -31,7 +32,6 @@ public class Enemy : MonoBehaviour
     //当たった弾が消滅
     //エネミーがダメージくらう
     public GameObject enemy;
-    public GameObject enemyBody;
     GameObject FakeenemyBody;
     GameObject Fake1;
     GameObject Fake2;

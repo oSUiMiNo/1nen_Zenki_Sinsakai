@@ -15,7 +15,7 @@ public class ApproachTarget : MonoBehaviour
     {
 
         agent = GetComponent<NavMeshAgent>();
-
+        target = GameObject.Find("Player");
     }
 
 
