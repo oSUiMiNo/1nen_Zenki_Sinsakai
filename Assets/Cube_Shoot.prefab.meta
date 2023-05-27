@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Cube_Shoot.prefab.meta
 guid: 52acff348cc64a345930f1afb1e5ffc5
+=======
+guid: 8a4b1998df1ed154799d7a9fff7a3a52
+>>>>>>> 7aa90aab900257b3d8e5251d39ad67883c7a1614:Assets/Cube_Damage.prefab.meta
+=======
+guid: 52acff348cc64a345930f1afb1e5ffc5
+>>>>>>> 7aa90aab900257b3d8e5251d39ad67883c7a1614
 PrefabImporter:
   externalObjects: {}
   userData: 
