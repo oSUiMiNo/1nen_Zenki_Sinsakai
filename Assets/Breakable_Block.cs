@@ -7,7 +7,7 @@ public class Breakable_Block : MonoBehaviour
 
     //当たった弾が消滅
     //壁がダメージくらう
-    public GameObject Block;
+    //public GameObject Block;
     float HP = 10;
 
     private void OnTriggerEnter(Collider collider)
@@ -31,7 +31,7 @@ public class Breakable_Block : MonoBehaviour
 
     private void Start()
     {
-        effect = GameObject.Find("Effect_BB");
+        effect = GameObject.Find("Effect_Block");
     }
 
 
@@ -50,7 +50,7 @@ public class Breakable_Block : MonoBehaviour
         }
         if (n >= 2)
         {
-            GameObject.Destroy(Block);
+            GameObject.Destroy(gameObject);
         }
         if (n >= 1 && n < 2)
         {

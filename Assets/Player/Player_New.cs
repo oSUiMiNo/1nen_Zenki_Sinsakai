@@ -82,7 +82,7 @@ public class Player_New : MonoBehaviour
 
         Forward();
 
-        Meter();
+        if(SpeedMeterText) Meter();
 
         Vector3 speedForward = rb.velocity.normalized;
     }
@@ -149,7 +149,7 @@ public class Player_New : MonoBehaviour
                 MoveSpeed = BoostMoveSpeed4;
                 if (MoveT >= 2)
                 {
-                    TestMarker.text = "初";
+                    if (TestMarker) TestMarker.text = "初";
                     MoveT = 0;
                 }
             }
@@ -166,21 +166,21 @@ public class Player_New : MonoBehaviour
                 if (Speed <= 7)
                 {
                     MoveSpeed = 80;
-                    TestMarker.text = "初";
+                    if(TestMarker) TestMarker.text = "初";
                 }
             }
 
 
             if (SpeedT >= 2 && SpeedT < 3)
             {
-                TestMarker.text = "B";
+                if (TestMarker) TestMarker.text = "B";
                 SpeedB = Speed;
             }
 
 
             if ((SpeedT >= 3) && (SpeedT < 4))
             {
-                TestMarker.text = "A";
+                if (TestMarker) TestMarker.text = "A";
                 SpeedA = Speed;
             }
 
@@ -190,13 +190,13 @@ public class Player_New : MonoBehaviour
                 if (SpeedA >= SpeedB)
                 {
 
-                    TestMarker.text = "〇";
+                    if (TestMarker) TestMarker.text = "〇";
 
                     MoveSpeed = NormalMoveSpeed;
 
                     if (SpeedT > 5)
                     {
-                        TestMarker.text = "×";
+                        if (TestMarker) TestMarker.text = "×";
                         SpeedT = 0;
                     }
                 }
@@ -205,52 +205,52 @@ public class Player_New : MonoBehaviour
                 {
                     if (Speed >= 200)
                     {
-                        TestMarker.text = "●";
+                        if (TestMarker) TestMarker.text = "●";
 
                         MoveSpeed = BoostMoveSpeed1;
 
                         if (SpeedT > 130)
                         {
-                            TestMarker.text = "×";
+                            if (TestMarker) TestMarker.text = "×";
                             SpeedT = 0;
                         }
                     }
 
                     if ((Speed < 200) && (Speed >= 100))
                     {
-                        TestMarker.text = "●";
+                        if (TestMarker) TestMarker.text = "●";
 
                         MoveSpeed = BoostMoveSpeed1;
 
                         if (SpeedT > 60)
                         {
-                            TestMarker.text = "×";
+                            if (TestMarker) TestMarker.text = "×";
                             SpeedT = 0;
                         }
                     }
 
                     if ((Speed < 100) && (Speed >= 50))
                     {
-                        TestMarker.text = "●";
+                        if (TestMarker) TestMarker.text = "●";
 
                         MoveSpeed = BoostMoveSpeed2;
 
                         if (SpeedT > 30)
                         {
-                            TestMarker.text = "×";
+                            if (TestMarker) TestMarker.text = "×";
                             SpeedT = 0;
                         }
                     }
 
                     if (Speed < 50)
                     {
-                        TestMarker.text = "●";
+                        if (TestMarker) TestMarker.text = "●";
 
                         MoveSpeed = BoostMoveSpeed3;
 
                         if (SpeedT > 5)
                         {
-                            TestMarker.text = "×";
+                            if (TestMarker) TestMarker.text = "×";
                             SpeedT = 0;
                         }
                     }
